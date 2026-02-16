@@ -12,15 +12,11 @@
     import-tree,
     ...
   } @ inputs: {
-    packages.x86_64-linux = {
-      default = nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs;};
-        module = {
-          imports = [
-            (import-tree ./nixvim)
-          ];
-        };
+    packages.x86_64-linux.default = nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = {inherit inputs;};
+      module = {
+        imports = [(import-tree ./nixvim)];
       };
     };
 

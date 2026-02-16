@@ -12,6 +12,7 @@
         "nvim-treesitter"
         "fff.nvim"
         "snacks.nvim"
+        "friendly-snippets"
       ];
     };
   };
@@ -57,6 +58,7 @@
     listchars = "tab:→\\ ,trail:°,extends:›,precedes:‹";
     foldmethod = "indent";
     foldlevel = 99;
+    conceallevel = 2;
     foldenable = false;
   };
 

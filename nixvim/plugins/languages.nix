@@ -3,7 +3,10 @@
     enable = true;
     settings = {
       keymap = {
-        preset = "default";
+        preset = "super-tab";
+      };
+      snippets = {
+        preset = "luasnip";
       };
       appearance = {
         use_nvim_cmp_as_default = false;
@@ -40,6 +43,10 @@
   plugins.luasnip = {
     enable = true;
     lazyLoad.settings.event = "InsertEnter";
+  };
+
+  plugins.friendly-snippets = {
+    enable = true;
   };
 
   plugins.treesitter = {
@@ -83,10 +90,6 @@
       tailwindcss.enable = true;
       volar.enable = true;
       biome.enable = true;
-    };
-
-    keymaps.lspBuf = {
-      K = "hover";
     };
 
     lazyLoad.settings.event = ["BufReadPost" "BufNewFile"];

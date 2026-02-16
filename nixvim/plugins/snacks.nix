@@ -21,15 +21,6 @@
       };
     }
     {
-      key = "<leader>/";
-      mode = "n";
-      action.__raw = "function() require('snacks').picker.grep() end";
-      options = {
-        silent = true;
-        desc = "Live grep";
-      };
-    }
-    {
       key = "<leader>fg";
       mode = "n";
       action.__raw = "function() require('snacks').picker.git_status() end";

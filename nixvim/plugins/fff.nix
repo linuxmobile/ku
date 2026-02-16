@@ -1,50 +1,76 @@
 {pkgs, ...}: {
   plugins.fff = {
     enable = true;
-    lazyLoad.settings.keys = [
-      {
-        __unkeyed-1 = "<leader>ff";
-        mode = "n";
-        desc = "FFF Finder";
-      }
-    ];
-  };
-
-  extraPlugins = [
-    (pkgs.vimUtils.buildVimPlugin {
-      name = "fff-snacks.nvim";
+    package = pkgs.vimUtils.buildVimPlugin {
+      pname = "fff.nvim";
+      version = "unstable";
       src = pkgs.fetchFromGitHub {
-        owner = "madmaxieee";
-        repo = "fff-snacks.nvim";
+        owner = "dmtrKovalenko";
+        repo = "fff.nvim";
         rev = "main";
-        hash = "sha256-h0HdCMMI72HrKnkk5e8eUOemy8zgVJYVfqbiKd6Uui4=";
+        hash = "sha256-fPUVa0msPVVtQP/s1DfYvoEnJFMIpfSR2EU2XmCUiqA=";
       };
-      dependencies = with pkgs.vimPlugins; [fff-nvim snacks-nvim];
-      doCheck = false;
-    })
-  ];
 
-  extraConfigLua = ''
-    require("fff-snacks").setup()
-  '';
+      postPatch = ''
+        mkdir -p target/release
+        cp ${pkgs.fetchurl {
+          url = "https://github.com/dmtrKovalenko/fff.nvim/releases/download/29e13ac/x86_64-unknown-linux-gnu.so";
+          hash = "sha256-gFu4Sz/oPgj0aiEk/LoXl56jHT0hgvwbcSp5L+uJOtk=";
+        }} target/release/libfff_nvim.so
+      '';
+
+      doCheck = false;
+      doInstallCheck = false;
+    };
+
+    settings = {
+      lazy_sync = true;
+      preview = {
+        chunk_size = 4096;
+      };
+      keymaps = {
+        close = [
+          "<Esc>"
+        ];
+        move_down = [
+          "Down"
+          "<C-j>"
+        ];
+        move_up = [
+          "Up"
+          "<C-k>"
+        ];
+        open_split = "<C-s>";
+        open_tab = "<C-t>";
+        open_vsplit = "<C-v>";
+        select_file = "<CR>";
+      };
+      layout = {
+        height = 0.8;
+        preview_position = "right";
+        width = 0.8;
+      };
+      max_results = 100;
+    };
+  };
 
   keymaps = [
     {
       key = "<leader>ff";
       mode = "n";
-      action = "<cmd>FFFSnacks<CR>";
+      action.__raw = "function() require('fff').find_files() end";
       options = {
         silent = true;
         desc = "FFF file picker";
       };
     }
     {
-      key = "<leader>fg";
+      key = "<leader>/";
       mode = "n";
-      action.__raw = "function() require('fff').find_in_git_root() end";
+      action.__raw = "function() require('fff').live_grep() end";
       options = {
         silent = true;
-        desc = "Find files in git root";
+        desc = "Live grep";
       };
     }
     {

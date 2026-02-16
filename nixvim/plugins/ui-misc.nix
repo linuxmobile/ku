@@ -9,5 +9,30 @@
     lazyLoad.settings.event = "LspAttach";
   };
 
-  opts.conceallevel = 2;
+  plugins.lspsaga = {
+    enable = true;
+    settings = {
+      ui.border = "single";
+      hover.enable = true;
+      lightbulb.enable = false;
+    };
+    lazyLoad.settings.event = "LspAttach";
+  };
+
+  plugins.dressing = {
+    enable = true;
+    lazyLoad.settings.event = "DeferredUIEnter";
+  };
+
+  keymaps = [
+    {
+      key = "<leader>k";
+      mode = "n";
+      action = "<cmd>Lspsaga hover_doc<CR>";
+      options = {
+        silent = true;
+        desc = "Hover Docs";
+      };
+    }
+  ];
 }
