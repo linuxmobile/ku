@@ -128,16 +128,4 @@
       };
     }
   ];
-
-  extraConfigLua = ''
-    vim.api.nvim_set_hl(0, 'MiniStatuslineModeNormal', { fg = '#081511', bg = '#e25c1b', bold = true })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineModeInsert', { fg = '#081511', bg = '#e25c1b', bold = true })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineModeVisual', { fg = '#081511', bg = '#e25c1b', bold = true })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineModeCommand', { fg = '#081511', bg = '#e25c1b', bold = true })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineModeReplace', { fg = '#081511', bg = '#e25c1b', bold = true })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineDevinfo', { fg = 'white', bg = '#0f201b' })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineFilename', { fg = 'white', bg = '#0f201b' })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineFileinfo', { fg = 'white', bg = '#081511' })
-    vim.api.nvim_set_hl(0, 'MiniStatuslineInactive', { fg = 'white', bg = '#081511' })
-  '';
 }

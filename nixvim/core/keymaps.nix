@@ -222,5 +222,23 @@
         desc = "Select All";
       };
     }
+    {
+      key = "u";
+      mode = "n";
+      action = "u";
+      options = {
+        silent = true;
+        desc = "Undo (Helix style)";
+      };
+    }
+    {
+      key = "U";
+      mode = "n";
+      action = "<C-r>";
+      options = {
+        silent = true;
+        desc = "Redo (Helix style)";
+      };
+    }
   ];
 }

@@ -56,10 +56,13 @@
     undofile = true;
     list = true;
     listchars = "tab:→\\ ,trail:°,extends:›,precedes:‹";
-    foldmethod = "indent";
-    foldlevel = 99;
     conceallevel = 2;
-    foldenable = false;
+    foldcolumn = "0";
+    foldlevel = 99;
+    foldlevelstart = 99;
+    foldenable = true;
+    foldmethod = "expr";
+    foldexpr = "v:lua.vim.treesitter.foldexpr()";
   };
 
   plugins.lz-n.enable = true;
