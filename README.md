@@ -2,6 +2,9 @@
 
 > Harnessing negative space to frame your logic. An interface that recedes to let code breathe.
 
+<img width="1427" height="1066" alt="image" src="https://github.com/user-attachments/assets/4c2b3c65-7230-4d2c-a299-d118eebee425" />
+
+
 In the pursuit of clarity, we often find ourselves adding layers of syntax, clusters of icons, and a cacophony of status lines. ku is an exercise in the opposite. It is a Neovim configuration built for the Nix ecosystem that treats emptiness not as a vacuum, but as a state of pure potential.
 
 Inspired by the Buddhist concept of _Sūnyatā_, this environment is designed for those who believe that the most powerful tool is the one that disappears when the work begins.
