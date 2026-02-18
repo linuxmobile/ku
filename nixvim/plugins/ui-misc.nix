@@ -1,27 +1,34 @@
 {
-  plugins.navic = {
-    enable = true;
-    lazyLoad.settings.event = "LspAttach";
-  };
-
-  plugins.fastaction = {
-    enable = true;
-    lazyLoad.settings.event = "LspAttach";
-  };
-
-  plugins.lspsaga = {
-    enable = true;
-    settings = {
-      ui.border = "single";
-      hover.enable = true;
-      lightbulb.enable = false;
+  plugins = {
+    navic = {
+      enable = true;
+      lazyLoad.settings.event = "LspAttach";
     };
-    lazyLoad.settings.event = "LspAttach";
-  };
 
-  plugins.dressing = {
-    enable = true;
-    lazyLoad.settings.event = "DeferredUIEnter";
+    fastaction = {
+      enable = true;
+      lazyLoad.settings.event = "LspAttach";
+    };
+
+    lspsaga = {
+      enable = true;
+      settings = {
+        ui.border = "single";
+        hover.enable = true;
+        lightbulb.enable = false;
+      };
+      lazyLoad.settings.event = "LspAttach";
+    };
+
+    dressing = {
+      enable = true;
+      lazyLoad.settings.event = "DeferredUIEnter";
+    };
+
+    wrapping = {
+      enable = true;
+      lazyLoad.settings.event = ["BufReadPost" "BufNewFile"];
+    };
   };
 
   keymaps = [
