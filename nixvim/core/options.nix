@@ -63,6 +63,7 @@
     foldenable = true;
     foldmethod = "expr";
     foldexpr = "v:lua.vim.treesitter.foldexpr()";
+    cmdheight = 0;
   };
 
   plugins.lz-n.enable = true;

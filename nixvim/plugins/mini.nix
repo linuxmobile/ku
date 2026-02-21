@@ -7,6 +7,17 @@
         icons = {};
         pairs = {};
         diff = {};
+        notify = {
+          lsp_progress = {
+            duration_last = 1000;
+            enable = true;
+            level = "INFO";
+          };
+          window = {
+            max_width_share = 0.382;
+            winblend = 25;
+          };
+        };
         comment = {
           mappings = {
             comment = "gc";

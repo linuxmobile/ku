@@ -7,15 +7,15 @@
       src = pkgs.fetchFromGitHub {
         owner = "dmtrKovalenko";
         repo = "fff.nvim";
-        rev = "main";
-        hash = "sha256-fPUVa0msPVVtQP/s1DfYvoEnJFMIpfSR2EU2XmCUiqA=";
+        tag = "727935e";
+        hash = "sha256-7NsV9zUjb67xHkYvyAid0IPDQRaPH6hauo+K1kTW2l0=";
       };
 
       postPatch = ''
         mkdir -p target/release
         cp ${pkgs.fetchurl {
-          url = "https://github.com/dmtrKovalenko/fff.nvim/releases/download/29e13ac/x86_64-unknown-linux-gnu.so";
-          hash = "sha256-gFu4Sz/oPgj0aiEk/LoXl56jHT0hgvwbcSp5L+uJOtk=";
+          url = "https://github.com/dmtrKovalenko/fff.nvim/releases/download/727935e/x86_64-unknown-linux-gnu.so";
+          hash = "sha256-9nrllbdySCzc2EMOUuCqgZEL0e3JwdVNoFqtz79E7f4=";
         }} target/release/libfff_nvim.so
       '';
 
